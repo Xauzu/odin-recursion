@@ -1,20 +1,20 @@
 function merge(arr1, arr2) {
-    let newArr = [];
+    let result = [];
     const newArr1 = [...arr1];
     const newArr2 = [...arr2];
     while (newArr1.length > 0 && newArr2.length > 0) {
         if (newArr1[0] < newArr2[0]){
-            newArr = [...newArr, newArr1[0]];
+            result = [...result, newArr1[0]];
             newArr1.splice(0, 1);
         }
         else{
-            newArr = [...newArr, newArr2[0]];
+            result = [...result, newArr2[0]];
             newArr2.splice(0, 1);
         }
     }
 
     // arr + remaining element in either array
-    return [...newArr, ...newArr1, ...newArr2];
+    return [...result, ...newArr1, ...newArr2];
 }
 
 function mergeSort(arr) {
